@@ -60,8 +60,37 @@ AMP è un "dialetto" implementato da Google per favorire e velocizzare il carica
     Google AMP Cache recupera le pagine AMP HTML, le memorizza in cache e ne ottimizza automaticamente le performance
     
     E' importante anche il sistema di validazione, tramite il quale si verifica che la pagina AMP html rispetti le specifiche e funzioni effettivamente.
-    
-
+    \begin{itemize}
+        \item I tag html "deprecati" da AMP
+        \begin{itemize}
+            \item \textless base \textgreater
+            \item \textless frame \textgreater
+            \item \textless frameset \textgreater
+            \item \textless object \textgreater
+            \item \textless param \textgreater
+            \item \textless applet \textgreater
+            \item \textless embed \textgreater
+            \item \textless form \textgreater Support coming in the future.
+            \item \textless input \textgreater
+            \item \textless script \textgreater
+        \end{itemize}
+        \item I tag html "rimpiazzati" da AMP
+        \begin{itemize}
+            \item \textless img \textgreater - rimpiazzato da amp-img
+            \item \textless audio \textgreater - rimpiazzato da amp-audio
+            \item \textless video \textgreater - rimpiazzato da amp-video
+            \item \textless iframe \textgreater - rimpiazzato da amp-iframe
+        \end{itemize}
+        \item I tag html permessi in  AMP
+        \begin{itemize}
+            \item \textless button \textgreater
+            \item \textless style \textgreater
+            \item \textless link \textgreater Support coming in the future.
+            \item \textless meta \textgreater
+            \item \textless a \textgreater
+            \item \textless svg \textgreater
+        \end{itemize}
+    \end{itemize}
 \end{itemize}
 
 
