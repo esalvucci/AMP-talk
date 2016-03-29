@@ -52,14 +52,7 @@ Facebook ha anche annunciato un plugin per wordpress. Il plugin ha lo scopo di a
 \subsection{Google AMP}
 AMP è un "dialetto" implementato da Google per favorire e velocizzare il caricamento delle pagine web richieste tramite mobile.
 
-\begin{itemize}
-    \item AMP HTML
-    \item AMP JS (il cuore di AMP)
-    \item Google AMP Cache\\
-    Sistema di consegna dei contenuti basato su proxy.\\
-    Google AMP Cache recupera le pagine AMP HTML, le memorizza in cache e ne ottimizza automaticamente le performance
-    
-    E' importante anche il sistema di validazione, tramite il quale si verifica che la pagina AMP html rispetti le specifiche e funzioni effettivamente.
+\subsubsection{AMP HTML}
     \begin{itemize}
         \item I tag html "deprecati" da AMP
         \begin{itemize}
@@ -91,8 +84,19 @@ AMP è un "dialetto" implementato da Google per favorire e velocizzare il carica
             \item \textless svg \textgreater
         \end{itemize}
     \end{itemize}
-\end{itemize}
 
+    \subsubsection{AMP JS (il cuore di AMP)}
+    AMP permette l'esecuzione di soli script asincroni (ovvero che vengono richiamati solo una volta che tutto il resto della pagina è stato caricato). Questo permette di evitare ritardi e peggiorare i tempi di caricamento.\\
+    \\
+    Le dimensioni delle risorse esterne, come per esempio immagini, ads pubblicitari ecc.., devono essere specificate staticamente in px; in questo modo AMP può renderizzare la pagina con i suoi contenuti e solo dopo "popolare" lo spazio vuoto con le risorse (più lente a caricarsi rispetto al testo).\\
+    
+    \subsubsection{Google AMP Cache}
+    Sistema di consegna dei contenuti basato su proxy.\\
+    Google AMP Cache recupera le pagine AMP HTML, le memorizza in cache e ne ottimizza automaticamente le performance
+    
+    E' importante anche il sistema di validazione, tramite il quale si verifica che la pagina AMP html rispetti le specifiche e funzioni effettivamente.
+
+\subsection{Wordpress plugin(s)}
 
 \bibliographystyle{plain}
 \bibliography{references}
