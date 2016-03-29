@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{AMP - Accelerated Mobile Pages}
+\author{Enrico Salvucci}
+\date{March 2016}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduzione}
+
+Problema: Quante volte avete lasciato un sito web perché stava impiegando un eternità a caricare?
+
+il 47 per cento degli utenti di Internet si aspettano che un sito web carichi in meno di due secondi.
+Durante i periodi di punta del traffico, il 75\% dei consumatori sono disposti a visitare siti concorrenti invece di attendere che una pagina finisca di caricare, quando è lenta.
+
+I giganti del web (e non solo) si sono mossi per affrontare questo aspetto e trovare un modo per ridurre i tempi di caricamento delle pagine web visitate da Mobile.
+Google ha posto grande attenzione alla questione mobile anche penalizzando nei risultati di ricerca (da circa un anno) i siti non "responsive".
+
+\subsection{Approcci}
+Esistono in particolare due approcci per favorire il caricamento di pagine web da mobile.
+\begin{itemize}
+    \item Basso livello (indirettamente)
+    \begin{itemize}
+        \item Google SPDY\\ 
+        SPDY (pronounced "SPeeDY") is a networking protocol whose goal is to speed up the web.\\
+        SPDY augments HTTP with several speed-related features that can dramatically reduce page load time\\
+        https://developers.google.com/speed/spdy/
+        \item HTTP/2.0
+    \end{itemize}
+
+    \item Alto livello
+    \begin{itemize}
+        \item Polaris (MIT)
+        \item Facebook Instant Articles (Facebook)\\
+        Oltre a garantire un caricamento molto rapido delle pagine dei siti "supporters", costringe a rimanere all ’interno dell ’ecosistema Facebook.
+FA offre anche possibilità di interazione (condivisione, commento, like ecc..) con il contenuto che si stà visualizzando.
+%% http://www.tsw.it/digital-marketing/content-marketing/abbiamo-provato-facebook-instant-articles-cose-e-come-funziona/
+Facebook ha anche annunciato un plugin per wordpress. Il plugin ha lo scopo di aiutare la pubblicazione dei contenuti all’interno di Instant Articles
+%% http://www.webnews.it/2016/03/08/facebook-instant-articles-wordpress/-
+
+        \item Apple News Format (Apple)
+        \item AMP (Google)
+    \end{itemize}
+\end{itemize}
+
+\subsection{Google AMP}
+AMP è un "dialetto" implementato da Google per favorire e velocizzare il caricamento delle pagine web richieste tramite mobile.
+
+\begin{itemize}
+    \item AMP HTML
+    \item AMP JS (il cuore di AMP)
+    \item Google AMP Cache\\
+    Sistema di consegna dei contenuti basato su proxy.\\
+    Google AMP Cache recupera le pagine AMP HTML, le memorizza in cache e ne ottimizza automaticamente le performance
+    
+    E' importante anche il sistema di validazione, tramite il quale si verifica che la pagina AMP html rispetti le specifiche e funzioni effettivamente.
+    
+
+\end{itemize}
+
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

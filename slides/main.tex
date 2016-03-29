@@ -1,0 +1,97 @@
+\documentclass[graphic, aspectratio=169]{beamer}
+
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\setbeamertemplate{frametitle}[default][center]
+\setbeamertemplate{background}
+{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio=true]{images/background.jpg}}
+
+\begin{document}
+
+\begin{frame}
+\begin{picture}(300,200)
+\put(30,80){\includegraphics[scale=.1]{images/logo-AMP}}
+\put(10,60){
+    \textcolor{white}{
+        \begin{minipage}[t]{0.4\linewidth}
+            {AMP - Accelerated Mobile Pages}
+        \end{minipage}
+    }
+}
+\end{picture}
+\end{frame}
+
+\setbeamertemplate{background}
+{\includegraphics[width=\paperwidth,height=\paperheight]{images/tennis-ball.jpg}}
+\begin{frame}
+\end{frame}
+
+\setbeamertemplate{background}{} % Imposto il background bianco 
+\begin{frame}{}
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.3]{images/google-spdy.jpg}
+    \label{fig:Google SPDY}
+\end{figure}
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{images/http2.jpeg}
+    \label{fig:HTTP/2.0}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+    \begin{figure}
+    \centering
+        \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{images/FA_example.jpg}
+        \label{fig:Facebook Instant Articles}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{images/apple_news_format.png}
+        \label{fig:Apple News Format}
+    \end{subfigure}
+
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{images/FA_supporters.png}
+    \label{fig:Facebook Instant Articles}
+    \end{figure}
+\end{frame}
+
+\setbeamertemplate{background}{} % Imposto il background bianco 
+
+\begin{frame}
+    % AMP is a way to build web pages for static content that render fast. AMP in action consists of three different parts:
+    % html-amp, AMP js, Google AMP Cache
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.1]{images/logo-AMP.png}
+    \label{fig:AMP logo}
+    \end{figure}
+    \begin{center}
+    AMP HTML   -   AMP JS  -  Google AMP Cache
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    % AMP is a way to build web pages for static content that render fast. AMP in action consists of three different parts:
+    % html-amp, AMP js, Google AMP Cache
+    
+\frametitle{AMP HTML}
+\lstinputlisting[language=html]{amp-html.html}
+\end{frame}
+
+
+\end{document}
