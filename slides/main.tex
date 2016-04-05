@@ -4,6 +4,8 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{tabularx}
 
 \setbeamertemplate{frametitle}[default][center]
 \setbeamertemplate{background}
@@ -121,6 +123,41 @@
 \setbeamertemplate{background}
 {\includegraphics[width=\paperwidth,height=\paperheight]{images/proxy.png}}
 \begin{frame}{AMP Cache}
+\end{frame}
+
+\setbeamertemplate{background}{} % Imposto il background bianco 
+\begin{frame}
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.3]{images/amp+wp.png}
+        \label{fig:amp+wordpress}
+    \end{figure}
+    \begin{itemize}
+        \item \url{https://wordpress.org/plugins/amp/}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+
+\begin{center}
+\begin{tabular}{>{\centering\arraybackslash}p{4cm}}
+\includegraphics[height=1cm]{images/twitter_logo.png} \textbf{\href{https://twitter.com/enrico_salvucci}{ @enrico\_salvucci}} \\
+\includegraphics[height=1cm]{images/github_logo.png} \textbf{\href{https://github.com/esalvucci}{https://github.com/esalvucci}} \\
+\end{tabular}
+
+\bigskip
+\begin{footnotesize}
+Slides realizzate con \LaTeX\ .\\
+La seguente presentazione \`e rilasciata sotto licenza\\
+\textbf{\href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons - Attributions, Share-alike 4.0}}\\
+
+\medskip
+\includegraphics[height=0.8cm]{images/cc.png}
+
+\medskip
+Sorgenti su \textbf{\url{https://github.com/esalvucci/WordpressRomagnaMeetupAMPTalk}}
+\end{footnotesize}
+\end{center}
 \end{frame}
 
 \end{document}

@@ -3,10 +3,12 @@
 
 \title{AMP - Accelerated Mobile Pages}
 \author{Enrico Salvucci}
-\date{March 2016}
+\date{7 Aprile 2016}
 
 \usepackage{natbib}
 \usepackage{graphicx}
+\usepackage{hyperref}
+
 
 \begin{document}
 
@@ -50,7 +52,7 @@ Facebook ha anche annunciato un plugin per wordpress. Il plugin ha lo scopo di a
 \end{itemize}
 
 \subsection{Google AMP}
-AMP è un "dialetto" implementato da Google per favorire e velocizzare il caricamento delle pagine web richieste tramite mobile.
+AMP è una modalità di sviluppo delle pagine web implementato da Google per favorire e velocizzare il caricamento delle pagine web richieste tramite mobile.
 
 \subsubsection{AMP HTML}
     \begin{itemize}
@@ -96,8 +98,29 @@ AMP è un "dialetto" implementato da Google per favorire e velocizzare il carica
     
     E' importante anche il sistema di validazione, tramite il quale si verifica che la pagina AMP html rispetti le specifiche e funzioni effettivamente.
 
-\subsection{Wordpress plugin(s)}
+\section{Wordpress plugin}
+Ad oggi esistono \href{https://it.wordpress.org/plugins/search.php?q=amp}{diversi plugin} per ottimizzare pagine wordpress tramite AMP, il più utilizzato è \url{https://it.wordpress.org/plugins/amp/}{AMP Wordpress Plugin} (Attenzione, versione 0.3.2!!)\\
+\\
+Dopo aver installato il plugin, se si hanno già i permalink abilitati, AMP sarà già funzionante e lo si può testare aggiungendo "/amp" all'url di un'articolo del sito (le pagine e gli archivi non sono ancora supportati).\\
+\\
+Verifichiamo ora che il codice AMP generato dal plugin sia valido: aggiungiamo all'url di un articolo con codice amp "\#development=1"; quindi per esempio: https://esempio.it/romagna-meetup-aprile/amp e controlliamo che nella console dei Chrome DevTools non siano segnalati errori.
 
-\bibliographystyle{plain}
-\bibliography{references}
+\href{https://www.ampproject.org/docs/guides/validate.html}{Documentazione Google per la validazione delle pagine AMP}
+
+\section{Link utili}
+\begin{itemize}
+    \item Ottima spiegazione su AMP - \href{https://www.posizionamento-seo.com/tecnica/content-management-system/wordpress/amp-accelerated-mobile-page-wordpress/}{https://www.posizionamento-seo.com/tecnica/content-management-system/wordpress/amp-accelerated-mobile-page-wordpress/}
+    \item \href{http://www.wired.com/2016/02/googles-amp-speeding-web-changing-works/}{http://www.wired.com/2016/02/googles-amp-speeding-web-changing-works/}
+    \item \href{https://support.google.com/webmasters/answer/6340290?hl=it}{Linee guida della Ricerca Google per le pagine AMP}
+    \item \href{http://html5today.it/tutorial/introduzione-a-accelerated-mobile-pages-amp-di-google/}{http://html5today.it/tutorial/introduzione-a-accelerated-mobile-pages-amp-di-google/}
+\end{itemize}
+
+\section{Licenza}
+
+Documento realizzate con \LaTeX\ e rilasciato sotto licenza\\
+\textbf{\href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons - Attributions, Share-alike 4.0}}\\
+
+\includegraphics[height=0.8cm]{images/cc.png}
+
+Sorgenti su \textbf{\url{https://github.com/esalvucci/WordpressRomagnaMeetupAMPTalk}}
 \end{document}
