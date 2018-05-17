@@ -6,8 +6,13 @@
 \usepackage{subcaption}
 \usepackage{hyperref}
 \usepackage{tabularx}
+\usepackage{parcolumns}
+\usepackage{fontawesome}
+
+\input{slides/html5-style.tex}
 
 \setbeamertemplate{frametitle}[default][center]
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
 \setbeamertemplate{background}
 {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio=true]{images/background.jpg}}
 
@@ -27,49 +32,13 @@
 \end{frame}
 
 \setbeamertemplate{background}
-{\includegraphics[width=\paperwidth,height=\paperheight]{images/tennis-ball.jpg}}
+{\includegraphics[width=\paperwidth,height=\paperheight]{slides/images/trenitalia_late.jpg}}
 \begin{frame}
 \end{frame}
 
-\setbeamertemplate{background}{} % Imposto il background bianco 
-\begin{frame}{}
-    \begin{figure}[h!]
-    \centering
-    \includegraphics[scale=0.3]{images/google-spdy.jpg}
-    \label{fig:Google SPDY}
-\end{figure}
-    \begin{figure}[h!]
-    \centering
-    \includegraphics[scale=0.5]{images/http2.jpeg}
-    \label{fig:HTTP/2.0}
-\end{figure}
-
-\end{frame}
-
+\setbeamertemplate{background}
+{\includegraphics[width=\paperwidth,height=\paperheight]{slides/images/tennis-ball.jpg}}
 \begin{frame}
-    \begin{figure}
-    \centering
-        \begin{subfigure}[b]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{images/FA_example.jpg}
-        \label{fig:Facebook Instant Articles}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.4\textwidth}
-        \includegraphics[width=\textwidth]{images/apple_news_format.png}
-        \label{fig:Apple News Format}
-    \end{subfigure}
-
-    \end{figure}
-
-\end{frame}
-
-\begin{frame}
-    \begin{figure}[h!]
-    \centering
-    \includegraphics[scale=0.5]{images/FA_supporters.png}
-    \label{fig:Facebook Instant Articles}
-    \end{figure}
 \end{frame}
 
 \setbeamertemplate{background}{} % Imposto il background bianco 
@@ -87,31 +56,79 @@
     \end{center}
 \end{frame}
 
+\setbeamertemplate{background}
+{\includegraphics[width=\paperwidth,height=\paperheight]{slides/images/amp_nazionale_italiana.jpg}}
 \begin{frame}
-    % AMP is a way to build web pages for static content that render fast. AMP in action consists of three different parts:
-    % html-amp, AMP js, Google AMP Cache
+\end{frame}
+
+\setbeamertemplate{background}{}
+\begin{frame}    
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{slides/images/article-screenshot.png}
+    \label{fig:AMP logo}
+    \end{figure}
+\end{frame}
     
-\frametitle{AMP HTML}
-\lstinputlisting[language=html]{amp-html.html}
+\begin{frame}    
+    \lstinputlisting[style=htmlcssjs, frame=single]{code/html/article.html}
 \end{frame}
 
-\setbeamertemplate{background}
-{\includegraphics[width=\paperwidth,height=\paperheight]{images/replaced_tags.png}}
 \begin{frame}
+\noindent\begin{minipage}{.40\textwidth}
+    \lstinputlisting[style=htmlcssjs, frame=single]{code/html/article-html-tag.html}
+\end{minipage}\hfill
+\begin{minipage}{.55\textwidth}
+    \lstinputlisting[style=htmlcssjs, frame=single]{code/amp/article-html-tag.html}
+    % <script async ... >Includes and loads the AMP JS library
+    % The AMP runtime is a piece of JavaScript that runs inside every AMP document. It provides implementations for AMP custom elements, manages resource loading and prioritization and optionally includes a runtime validator for AMP HTML for use during development.
+
+%The AMP runtime is loaded via the mandatory <script src="https://cdn.ampproject.org/v0.js"></script> tag in the AMP document <head>.
+\end{minipage}
 \end{frame}
 
-\setbeamertemplate{background}
-{\includegraphics[width=\paperwidth,height=\paperheight]{images/ok_tags.png}}
 \begin{frame}
+\noindent\begin{minipage}{.40\textwidth}
+    \lstinputlisting[style=htmlcssjs, frame=single]{code/html/article-link-rel.html}
+\end{minipage}\hfill
+\begin{minipage}{.55\textwidth}
+    \lstinputlisting[style=htmlcssjs, frame=single]{code/amp/article-link-rel.html}
+\end{minipage}
 \end{frame}
 
-\setbeamertemplate{background}
-{\includegraphics[width=\paperwidth,height=\paperheight]{images/deprecated_tags.png}}
 \begin{frame}
+\noindent\begin{minipage}{.40\textwidth}
+    \lstinputlisting[style=htmlcssjs, frame=single]{code/html/article-viewport.html}
+\end{minipage}\hfill
+\begin{minipage}{.55\textwidth}
+    \lstinputlisting[style=htmlcssjs, frame=single]{code/amp/article-viewport.html}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\noindent\begin{minipage}{.40\textwidth}
+    \lstinputlisting[style=htmlcssjs, frame=single]{code/html/article-css.html}
+\end{minipage}\hfill
+\begin{minipage}{.55\textwidth}
+    \lstinputlisting[style=htmlcssjs, frame=single]{code/amp/article-css.html}
+\end{minipage}
+\end{frame}
+
+\begin{frame}    
+    \lstinputlisting[style=htmlcssjs, frame=single]{code/html/article-js.html}
+\end{frame}
+
+\begin{frame}
+\noindent\begin{minipage}{.40\textwidth}
+    \lstinputlisting[style=htmlcssjs, frame=single]{code/html/article-image.html}
+\end{minipage}\hfill
+\begin{minipage}{.55\textwidth}
+    \lstinputlisting[style=htmlcssjs, frame=single]{code/amp/article-image.html}
+\end{minipage}
 \end{frame}
 
 \setbeamertemplate{background}
-{\includegraphics[width=\paperwidth,height=\paperheight]{images/amp_example_without_images.jpg}}
+{\includegraphics[width=\paperwidth,height=\paperheight]{slides/images/amp_example_without_images.jpg}}
 \begin{frame}
 \end{frame}
 
@@ -120,25 +137,54 @@
 \begin{frame}
 \end{frame}
 
+\setbeamertemplate{background}{}
+
+\begin{frame}
+\noindent\begin{minipage}{.45\textwidth}
+    \lstinputlisting[style=htmlcssjs, frame=single]{code/amp/article.amp-1.html}
+\end{minipage}\hfill
+\begin{minipage}{.45\textwidth}
+    \lstinputlisting[style=htmlcssjs, frame=single]{code/amp/article.amp-2.html}
+\end{minipage}
+\end{frame}
+
 \setbeamertemplate{background}
 {\includegraphics[width=\paperwidth,height=\paperheight]{images/proxy.png}}
 \begin{frame}{AMP Cache}
 \end{frame}
 
-\setbeamertemplate{background}{} % Imposto il background bianco 
+\setbeamertemplate{background}
+{\href{https://search.google.com/test/amp?view=search-preview&id=srqIZ15g1kFY89ACklbuMA}{\includegraphics[width=\paperwidth]{slides/images/repubblica_phone.png}}}
 \begin{frame}
-    \begin{figure}
-        \centering
-        \includegraphics[scale=0.3]{images/amp+wp.png}
-        \label{fig:amp+wordpress}
-    \end{figure}
-    \begin{itemize}
-        \item \url{https://wordpress.org/plugins/amp/}
-    \end{itemize}
 \end{frame}
 
+\setbeamertemplate{background}
+{\includegraphics[width=\paperwidth,height=\paperheight]{slides/images/dislike.jpg}}
 \begin{frame}
+\end{frame}
 
+\setbeamertemplate{background}
+{\includegraphics[width=\paperwidth]{slides/images/repubblica_phone.png}}
+\begin{frame}
+\end{frame}
+
+\setbeamertemplate{background}
+{\includegraphics[width=\paperwidth,height=\paperheight]{slides/images/against_amp.png}}
+\begin{frame}
+\end{frame}
+
+\setbeamertemplate{background}
+{\includegraphics[width=\paperwidth,height=\paperheight]{slides/images/gmail-phishing.png}}
+\begin{frame}
+\end{frame}
+
+\setbeamertemplate{background}
+{\includegraphics[width=\paperwidth,height=\paperheight]{slides/images/gmail-phishing-with-redirect.png}}
+\begin{frame}
+\end{frame}
+
+\setbeamertemplate{background}{}
+\begin{frame}
 \begin{center}
 \begin{tabular}{>{\centering\arraybackslash}p{4cm}}
 \includegraphics[height=1cm]{images/twitter_logo.png} \textbf{\href{https://twitter.com/enrico_salvucci}{ @enrico\_salvucci}} \\
@@ -147,17 +193,17 @@
 
 \bigskip
 \begin{footnotesize}
-Slides realizzate con \LaTeX\ .\\
-La seguente presentazione \`e rilasciata sotto licenza\\
-\textbf{\href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons - Attributions, Share-alike 4.0}}\\
+Slides written in \LaTeX\ and released under \\ \textbf{\href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons - Attributions, Share-alike 4.0}} license.\\
 
 \medskip
 \includegraphics[height=0.8cm]{images/cc.png}
 
 \medskip
-Sorgenti su \textbf{\url{https://github.com/esalvucci/WordpressRomagnaMeetupAMPTalk}}
+Sources on \textbf{\url{https://github.com/esalvucci/AMP-talk}}\\
+A readable version of this talk is available at \url{ https://github.com/esalvucci/AMP-talk/raw/master/readable/readable.pdf} 
 \end{footnotesize}
 \end{center}
 \end{frame}
-
+% https://github.com/esalvucci/AMP-talk/raw/master/readable/readable.pdf
 \end{document}
+

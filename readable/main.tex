@@ -3,12 +3,11 @@
 
 \title{AMP - Accelerated Mobile Pages}
 \author{Enrico Salvucci}
-\date{7 Aprile 2016}
+\date{18 Maggio 2018}
 
 \usepackage{natbib}
 \usepackage{graphicx}
 \usepackage{hyperref}
-
 
 \begin{document}
 
@@ -19,37 +18,27 @@
 \tableofcontents
 
 \newpage
-\section{Introduzione}
+\section{Preface}
 
-Problema: Quante volte avete lasciato un sito web perché stava impiegando un eternità a caricare (o anche semplicemente più del tempo che vi sareste aspettati)?
+We know the matter about User Experience: Who ever complained about a train late? and who ever complained about a web page loading time and, eventually, left it due to a long wait?
 
-Oggi ci aspettiamo dalle pagine caricate dal browser alte velocità, vogliamo tutto ora, subito. Se una pagina impiega troppo tempo per caricarsi non la aspettiamo ma semplicemente cambiamo andando a navigare qualche altro contenuto.
+Today we want all "hic et nunc", istantly.
 
-I giganti del web (e non solo) si sono mossi per affrontare questo aspetto e trovare un modo per ridurre i tempi di caricamento delle pagine web visitate da Mobile.
-Google ha posto grande attenzione alla questione mobile anche penalizzando nei risultati di ricerca (da circa un anno) i siti non "responsive".
+Many big Web Agencies took action to solve this problem and reduce the load time of a web page. Different approaches could be found: low level or high level approach.
 
-\subsection{Approcci}
-Esistono in particolare due approcci per favorire il caricamento di pagine web da mobile.
+\subsection{Approaches}
 \begin{itemize}
-    \item Basso livello (indirettamente)
+    \item Low level
     \begin{itemize}
-        \item Google SPDY\\ 
-        SPDY (pronounced "SPeeDY") is a networking protocol whose goal is to speed up the web.\\
-        SPDY augments HTTP with several speed-related features that can dramatically reduce page load time\\
+        \item Google SPDY\\
         https://developers.google.com/speed/spdy/
         \item HTTP/2.0
     \end{itemize}
 
-    \item Alto livello
+    \item High level
     \begin{itemize}
         \item Polaris (MIT)
         \item Facebook Instant Articles (Facebook)\\
-        Oltre a garantire un caricamento molto rapido delle pagine dei siti "supporters", costringe a rimanere all ’interno dell ’ecosistema Facebook.
-FA offre anche possibilità di interazione (condivisione, commento, like ecc..) con il contenuto che si stà visualizzando.
-%% http://www.tsw.it/digital-marketing/content-marketing/abbiamo-provato-facebook-instant-articles-cose-e-come-funziona/
-Facebook ha anche annunciato un plugin per wordpress. Il plugin ha lo scopo di aiutare la pubblicazione dei contenuti all’interno di Instant Articles
-%% http://www.webnews.it/2016/03/08/facebook-instant-articles-wordpress/-
-
         \item Apple News Format (Apple)
         \item AMP (Google)
     \end{itemize}
@@ -57,11 +46,11 @@ Facebook ha anche annunciato un plugin per wordpress. Il plugin ha lo scopo di a
 
 \newpage
 \subsection{Google AMP}
-AMP è una modalità di sviluppo delle pagine web implementato da Google per favorire e velocizzare il caricamento delle pagine richieste tramite mobile.
-
+It's a project started in 2016 by Google which promote a fast load of a web page visited on mobile.
+AMP grows on three base components:
 \subsubsection{AMP HTML}
     \begin{itemize}
-        \item I tag html "deprecati" da AMP
+        \item Some deprecated html tags in AMP
         \begin{itemize}
             \item \textless base \textgreater
             \item \textless frame \textgreater
@@ -74,14 +63,14 @@ AMP è una modalità di sviluppo delle pagine web implementato da Google per fav
             \item \textless input \textgreater
             \item \textless script \textgreater
         \end{itemize}
-        \item I tag html "rimpiazzati" da AMP
+        \item Replaced html tags in AMP
         \begin{itemize}
-            \item \textless img \textgreater - rimpiazzato da amp-img
-            \item \textless audio \textgreater - rimpiazzato da amp-audio
-            \item \textless video \textgreater - rimpiazzato da amp-video
-            \item \textless iframe \textgreater - rimpiazzato da amp-iframe
+            \item \textless img \textgreater -\textgreater amp-img
+            \item \textless audio \textgreater -\textgreater amp-audio
+            \item \textless video \textgreater -\textgreater amp-video
+            \item \textless iframe \textgreater -\textgreater amp-iframe
         \end{itemize}
-        \item I tag html permessi in  AMP
+        \item Granted html tags in AMP
         \begin{itemize}
             \item \textless button \textgreater
             \item \textless style \textgreater
@@ -92,42 +81,52 @@ AMP è una modalità di sviluppo delle pagine web implementato da Google per fav
         \end{itemize}
     \end{itemize}
 
-    \subsubsection{AMP JS (il cuore di AMP)}
-    AMP permette l'esecuzione di soli script asincroni (ovvero che vengono richiamati solo una volta che tutto il resto della pagina è stato caricato). Questo permette di evitare ritardi e peggiorare i tempi di caricamento.\\
-    \\
-    Le dimensioni delle risorse esterne, come per esempio immagini, ads pubblicitari ecc.., devono essere specificate staticamente in px; in questo modo AMP può renderizzare la pagina con i suoi contenuti e solo dopo "popolare" lo spazio vuoto con le risorse (più lente a caricarsi rispetto al testo).\\
+    \subsubsection{AMP JS (AMP core)}
+    %
+    % The Idea was not no Javascript, the idea was "Good user experience"
+    %
+    % Web workers --> They are a way to have separated shared nothing threads running your javascript
+    % The main thing about the workers is they don't actually have access to the page DOM by default
+    % Everything you do in the DOM cannot block the main thread
+    AMP allows only asynchronous script. The Idea is not no Javascript, the idea is "Good user experience".
+    Javascript code could have unpredictable behaviour and in such way you avoid late page rendering and do not block DOM construction.
+    
+    %Le dimensioni delle risorse esterne, come per esempio immagini, ads pubblicitari ecc.., devono essere specificate staticamente in px; in questo modo AMP può renderizzare la pagina con i suoi contenuti e solo dopo "popolare" lo spazio vuoto con le risorse (più lente a caricarsi rispetto al testo).\\
+    In the next future Javascript will be allowed on AMP pages (annunced in February at AMP Conf 2018) through the use of Web Workers (which can't touch the DOM by default).
     
     \subsubsection{Google AMP Cache}
-    Sistema di consegna dei contenuti basato su proxy.\\
-    Google AMP Cache recupera le pagine AMP HTML, le memorizza in cache e ne ottimizza automaticamente le performance
+    Google AMP employ a proxy system to cache contents and preload pages before their will be queried.
     
-    E' importante anche il sistema di validazione, tramite il quale si verifica che la pagina AMP html rispetti le specifiche e funzioni effettivamente.
-\newpage
-\section{Wordpress plugin}
-Ad oggi esistono \href{https://it.wordpress.org/plugins/search.php?q=amp}{diversi plugin} per ottimizzare pagine wordpress tramite AMP, il più utilizzato è \url{https://it.wordpress.org/plugins/amp/}{AMP Wordpress Plugin} (Attenzione, versione 0.3.2!!)\\
-\\
-Dopo aver installato il plugin, se si hanno già i permalink abilitati, AMP sarà già funzionante e lo si può testare aggiungendo "/amp" all'url di un'articolo del sito (le pagine e gli archivi non sono ancora supportati).\\
-\\
-Verifichiamo ora che il codice AMP generato dal plugin sia valido: aggiungiamo all'url di un articolo con codice amp "\#development=1"; quindi per esempio: https://esempio.it/romagna-meetup-aprile/amp e controlliamo che nella console dei Chrome DevTools non siano segnalati errori.
+    \subsection{Validation}
+    Another important AMP feature is validatidation system, which verifies the compliance of an AMP page according to the language specifics.
 
-\href{https://www.ampproject.org/docs/guides/validate.html}{Documentazione Google per la validazione delle pagine AMP}
+    %
+    % Problema delle pagine AMP che puntano a google.com
+    % "risolto" tramite il web packaging (che vogliono rendere in futuro uno standard).
+    % creo un pacchetto con tutti i contenuti necessari alla AMP page (immagini, html, e quant'altro serva per mostrare la pagina..), lo firmo con una chiave crittografica e lo invio a qualunque google cache.
+    % Quando la cache fornisce la pagina e i contenuti il browser riconosce che l'identita' di quel pacchetto viene da un altro dominio. Cosi' viene mostrato il dominio originale e non il google.com
 
-\newpage
-\section{Link utili}
+\section{References}
 \begin{itemize}
-    \item Ottima spiegazione su AMP - \href{https://www.posizionamento-seo.com/tecnica/content-management-system/wordpress/amp-accelerated-mobile-page-wordpress/}{https://www.posizionamento-seo.com/tecnica/content-management-system/wordpress/amp-accelerated-mobile-page-wordpress/}
+    \item https://ampbyexample.com/
+    \item https://www.ampproject.org/it/docs/media/amp\_replacements
+    \item https://www.ampproject.org/it/learn/about-how/ (in basso)
     \item \href{http://www.wired.com/2016/02/googles-amp-speeding-web-changing-works/}{http://www.wired.com/2016/02/googles-amp-speeding-web-changing-works/}
-    \item \href{https://support.google.com/webmasters/answer/6340290?hl=it}{Linee guida della Ricerca Google per le pagine AMP}
-    \item \href{http://html5today.it/tutorial/introduzione-a-accelerated-mobile-pages-amp-di-google/}{http://html5today.it/tutorial/introduzione-a-accelerated-mobile-pages-amp-di-google/}
+    \item \href{https://www.ampproject.org/docs/fundamentals/how_cached}{How AMP pages are cached}
+    \item https://techcrunch.com/2018/03/08/google-promises-publishers-an-alternative-to-amp/
+    \item https://www.theregister.co.uk/2017/05/19/open\_source\_insider\_google\_amp\_bad\_bad\_bad/
+    \item https://www.ampproject.org/docs/fundamentals/converting/resolving-errors
+    \item https://www.ampproject.org/docs/fundamentals/how\_cached
+    \item https://www.youtube.com/watch?v=ol-YxPw66Kc (AMP Conf 2018)
+    \item https://www.theverge.com/2018/3/8/17095078/google-amp-accelerated-mobile-page-announcement-standard-web-packaging-urls
 \end{itemize}
 
-\section{Licenza}
+\section{License}
 
-Documento realizzato con \LaTeX\ e rilasciato sotto licenza\\
-\textbf{\href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons - Attributions, Share-alike 4.0}}\\
+Document written in \LaTeX\ and released under \textbf{\href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons - Attributions, Share-alike 4.0}}\\
 
 \includegraphics[height=0.8cm]{images/cc.png}
 
-Sorgenti su \textbf{\url{https://github.com/esalvucci/WordpressRomagnaMeetupAMPTalk}}
+Sources on \textbf{\url{https://github.com/esalvucci/AMP-talk}}
 \end{document}
 

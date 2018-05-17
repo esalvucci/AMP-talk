@@ -1,2 +1,4 @@
-# Wordpress Romagna Meetup - AMP Talk
-Presentazione di Accelerated Mobile Pages Project al WP Romagna meetup di aprile 2016
+# Accelerated Mobile Pages
+Slides used in a talk about Google Accelerated Mobile Pages (AMP)
+
+The slides version is in slides directory and a readable version is available in readable directory.
